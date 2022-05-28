@@ -1,0 +1,156 @@
+
+
+.ColAboutMe {
+  position: relative;
+  margin-top: 300px;
+}
+
+.TextAboutMe::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 2px;
+  background: rgb(14, 193, 234);
+  top: 35px;
+}
+
+.Description {
+  position: relative;
+  top: -80px;
+}
+
+.Education::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 2px;
+  background: rgb(14, 193, 234);
+  top: 35px;
+}
+
+.ColEducation {
+  position: relative;
+}
+.ColEducation::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 96px;
+  width: 1px;
+  height: 210px;
+  background: #0dcaf0 !important;
+}
+
+.EducationDate::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 96px;
+  width: 35px;
+  height: 1px;
+  background: #0dcaf0 !important;
+}
+
+.EducationDate1::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 305px;
+  width: 35px;
+  height: 1px;
+  background: #0dcaf0 !important;
+}
+
+.ColExperience {
+  position: relative;
+}
+
+.Experience::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  background: rgb(14, 193, 234);
+  top: 35px;
+}
+
+.ColExperience::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 96px;
+  width: 1px;
+  height: 130px;
+  background: #0dcaf0 !important;
+}
+
+.ExperienceDate::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 96px;
+  width: 35px;
+  height: 1px;
+  background: #0dcaf0 !important;
+}
+
+.ExperienceDate1::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 226px;
+  width: 35px;
+  height: 1px;
+  background: #0dcaf0 !important;
+}
+
+.ColSkills {
+  position: relative;
+}
+
+.Skills::before {
+  content: "";
+  position: absolute;
+  width: 88px;
+  height: 2px;
+  background: rgb(14, 193, 234);
+  top: 35px;
+}
+
+.PortoFolio {
+  color: white;
+}
+
+.PortoFolio::before {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 2px;
+  background: rgb(14, 193, 234);
+  top: 35px;
+}
+
+.ColPortoFolio {
+  position: relative;
+}
+
+.BoxPortfolio {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.CoverHoverPortfolio {
+  transition: 1s all ease-in-out !important;
+  color: aliceblue;
+  top: 0px;
+  background: rgba(5, 5, 5, 0.826);
+  opacity: 0;
+  width: 95%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+}
+
+.BoxPortfolio:hover .CoverHoverPortfolio {
+  opacity: 1;
+}

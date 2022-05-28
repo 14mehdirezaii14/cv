@@ -1,0 +1,13 @@
+.TitleContact::before{
+    content: "";
+    position: absolute;
+    width: 115px;
+    height: 2px;
+    background: rgb(14, 193, 234);
+    top: 35px;
+}
+
+.ColContact{
+    position: relative;
+    margin-top: 200px;
+}
