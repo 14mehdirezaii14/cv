@@ -1,7 +1,17 @@
 import  Link  from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMouse , faPhoneAlt , faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import ContactStyle from '../styles/contact.module.css'
+import ContactStyle from '../styles/contact.module.css';
+
+
+
+export async function getServerSideProps(context) {
+  return {
+    props: {}, // will be passed to the page component as props
+  }
+}
+
+
 const ContactMe = () => {
   return (
     <>

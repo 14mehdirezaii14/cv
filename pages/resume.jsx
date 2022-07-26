@@ -11,9 +11,46 @@ import { NextSeo } from "next-seo";
 import bitcoGame from "../public/Images/bitcogame-image-min.png";
 import GoEscape from "../public/Images/GoEscape-Image-min.png";
 import MahanCement from "../public/Images/MahanCement-Image-min.png";
+
+export async function getServerSideProps(context) {
+  return {
+    props: {}, // will be passed to the page component as props
+  };
+}
+
 function Resume(props) {
-  console.log(props)
+  console.log(props);
   const [displayMouse, setDisplayMouse] = useState("d-inline");
+  const [listSkills, setListSkills] = useState([
+    {
+      skill: "ReactJs",
+      rate: "70%",
+    },
+    {
+      skill: "NextJs",
+      rate: "60%",
+    },
+    {
+      skill: "TailwindCss",
+      rate: "40%",
+    },
+    {
+      skill: "Bootstrap",
+      rate: "80%",
+    },
+    {
+      skill: "Redux",
+      rate: "70%",
+    },
+    {
+      skill: "Redux-toolkit",
+      rate: "45%",
+    },
+    {
+      skill: "TypeScript",
+      rate: "50%",
+    },
+  ]);
   const viewer = useRef("hello");
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -25,43 +62,46 @@ function Resume(props) {
         setDisplayMouse("d-inline");
       }
       if (window.scrollY >= 860) {
-        gsap.to(".ProgressHtml", {
-          width: "90%",
-          duration: 1,
-          ease: "elastic",
+        listSkills.map((skill, index) => {
+          gsap.to(`.Progress${skill.skill}`, {
+            width: skill.rate,
+            duration: 2,
+            ease: "power1",
+          });
         });
-        gsap.to(".ProgressCss", { width: "90%", ease: "elastic", duration: 2 });
-        gsap.to(".ProgressBootstrap", {
-          width: "95%",
-          ease: "elastic",
-          duration: 3,
-        });
-        gsap.to(".ProgressJavascript", {
-          width: "80%",
-          ease: "elastic",
-          duration: 4,
-        });
-        gsap.to(".ProgressJquery", {
-          width: "80%",
-          ease: "elastic",
-          duration: 5,
-        });
-        gsap.to(".ProgressReactJs", {
-          width: "90%",
-          ease: "elastic",
-          duration: 6,
-        });
-        gsap.to(".ProgressSeo", { width: "70%", ease: "elastic", duration: 7 });
-        gsap.to(".ProgressNextJs", {
-          width: "85%",
-          ease: "elastic",
-          duration: 8,
-        });
-        gsap.to(".ProgressRedux", {
-          width: "85%",
-          ease: "elastic",
-          duration: 9,
-        });
+
+        // gsap.to(".ProgressCss", { width: "90%", ease: "elastic", duration: 2 });
+        // gsap.to(".ProgressBootstrap", {
+        //   width: "95%",
+        //   ease: "elastic",
+        //   duration: 3,
+        // });
+        // gsap.to(".ProgressJavascript", {
+        //   width: "80%",
+        //   ease: "elastic",
+        //   duration: 4,
+        // });
+        // gsap.to(".ProgressJquery", {
+        //   width: "80%",
+        //   ease: "elastic",
+        //   duration: 5,
+        // });
+        // gsap.to(".ProgressReactJs", {
+        //   width: "90%",
+        //   ease: "elastic",
+        //   duration: 6,
+        // });
+        // gsap.to(".ProgressSeo", { width: "70%", ease: "elastic", duration: 7 });
+        // gsap.to(".ProgressNextJs", {
+        //   width: "85%",
+        //   ease: "elastic",
+        //   duration: 8,
+        // });
+        // gsap.to(".ProgressRedux", {
+        //   width: "85%",
+        //   ease: "elastic",
+        //   duration: 9,
+        // });
       }
     });
   }, []);
@@ -165,7 +205,7 @@ function Resume(props) {
               <br />{" "}
               <span className="mt-3 pt-3 d-inline-block">مقطع فوق دیپلم</span>
               <br />
-              <span className="d-inline-block mt-3"> رشته گراقیک</span>
+              <span className="d-inline-block mt-3"> رشته گرافیک</span>
               <br />
               <span>ترم دوم</span>
             </p>
@@ -204,98 +244,28 @@ function Resume(props) {
             <p className={`h4 ${ResumeStyles.Skills} text-light mb-4`}>
               مهارت ها
             </p>
-            <span className="text-light">HTML</span>
-            <div style={{ height: "20px" }} className="progress">
-              <div
-                className="progress-bar-striped ProgressHtml progress-bar-animated bg-dark progress-bar"
-                style={{ height: "20px" }}
-              >
-                90%
-              </div>
-            </div>
+
             {/*  */}
-            <span className="text-light d-inline-block mt-4">CSS</span>
-            <div
-              style={{ height: "20px" }}
-              className={`${ResumeStyles.progress} progress`}
-            >
-              <div
-                className="progress-bar-striped ProgressCss progress-bar-animated bg-dark progress-bar"
-                style={{ height: "20px" }}
-              >
-                90%
-              </div>
-            </div>
-            {/*  */}
-            <span className="text-light d-inline-block mt-4">BOOTSTRAP</span>
-            <div style={{ height: "20px" }} className="progress">
-              <div
-                className="progress-bar-striped ProgressBootstrap progress-bar-animated bg-dark progress-bar"
-                style={{ height: "20px" }}
-              >
-                95%
-              </div>
-            </div>
-            {/*  */}
-            <span className="text-light d-inline-block mt-4">JAVASCRIPT</span>
-            <div style={{ height: "20px" }} className="progress">
-              <div
-                className="progress-bar-striped ProgressJavascript progress-bar-animated bg-dark progress-bar"
-                style={{ height: "20px" }}
-              >
-                80%
-              </div>
-            </div>
-            {/*  */}
-            <span className="text-light d-inline-block mt-4">JQUERY</span>
-            <div style={{ height: "20px" }} className="progress">
-              <div
-                className="progress-bar-striped ProgressJquery progress-bar-animated bg-dark progress-bar"
-                style={{ height: "20px" }}
-              >
-                80%
-              </div>
-            </div>
-            {/*  */}
-            <span className="text-light d-inline-block mt-4">REACT JS</span>
-            <div style={{ height: "20px" }} className="progress">
-              <div
-                className="progress-bar-striped ProgressReactJs progress-bar-animated bg-dark progress-bar"
-                style={{ height: "20px" }}
-              >
-                90%
-              </div>
-            </div>
-            {/*  */}
-            <span className="text-light d-inline-block mt-4">SEO</span>
-            <div style={{ height: "20px" }} className="progress">
-              <div
-                className="progress-bar-striped ProgressSeo progress-bar-animated bg-dark progress-bar"
-                style={{ height: "20px" }}
-              >
-                70%
-              </div>
-            </div>
-            {/*  */}
-            <span className="text-light d-inline-block mt-4">NEXT JS</span>
-            <div style={{ height: "20px" }} className="progress">
-              <div
-                className="progress-bar-striped ProgressNextJs progress-bar-animated bg-dark progress-bar"
-                style={{ height: "20px" }}
-              >
-                85%
-              </div>
-            </div>
-            {/*  */}
-            <span className="text-light d-inline-block mt-4">REDUX</span>
-            <div style={{ height: "20px" }} className="progress">
-              <div
-                className="progress-bar-striped ProgressRedux progress-bar-animated bg-dark progress-bar"
-                style={{ height: "20px" }}
-              >
-                85%
-              </div>
-            </div>
+            {listSkills.map((skill) => {
+              console.log(skill);
+              return (
+                <>
+                  <span className="text-light">{skill.skill}</span>
+                  <div style={{ height: "20px" }} className="progress mb-4">
+                    <div
+                      className={`progress-bar-striped Progress${skill.skill} progress-bar-animated bg-dark progress-bar`}
+                      style={{
+                        height: "20px",
+                        width: skill.rate + 10,
+                        transition: "none",
+                      }}
+                    >
+                      {skill.rate}
+                    </div>
+                  </div>
+                </>
+              );
+            })}
           </div>
         </div>
         {/* END SKILLS */}
