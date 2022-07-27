@@ -17,10 +17,7 @@ export async function getStaticProps(context) {
 const ContactMe = () => {
   return (
     <>
-      <NextSeo
-        title="Mehdi Rezaii Front-End Developer"
-        description="سلام بنده مهدی رضایی هستم برنامه نویس وب"
-      />
+      <NextSeo title="Contact Me" description="تماس با من" />
       <div className="container">
         <div className="row justify-content-center mt-5 pt-5">
           <div className="col-md-9 text-center mt-5  mb-5">

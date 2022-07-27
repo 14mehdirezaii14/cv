@@ -217,7 +217,7 @@ function Resume(props) {
           </div>
           {/* END EDUCATION */}
           {/* EXPERIENCE */}
-          <div className={`col-md-6 ${ResumeStyles.ColExperience}`}>
+          <div className={`col-md-6 mt-3 ${ResumeStyles.ColExperience}`}>
             <p className={`text-light h4 pb-5 ${ResumeStyles.Experience}`}>
               تجربه
             </p>
