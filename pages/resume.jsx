@@ -12,7 +12,7 @@ import bitcoGame from "../public/Images/bitcogame-image-min.png";
 import GoEscape from "../public/Images/GoEscape-Image-min.png";
 import MahanCement from "../public/Images/MahanCement-Image-min.png";
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   return {
     props: {}, // will be passed to the page component as props
   };
